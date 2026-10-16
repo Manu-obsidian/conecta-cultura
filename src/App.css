@@ -1,38 +1,187 @@
 .App {
+  min-height: 100vh;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 8%;
+  background-color: #ffffff;
+}
+
+.cabecalho h1 {
+  color: #285943;
+  font-size: 25px;
+}
+
+.cabecalho nav {
+  display: flex;
+  gap: 24px;
+}
+
+.cabecalho nav a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.cabecalho nav a:hover {
+  color: #285943;
+}
+
+.botoes-acesso {
+  display: flex;
+  gap: 12px;
+}
+
+button,
+.botao-principal {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.botao-login {
+  background-color: transparent;
+  color: #285943;
+}
+
+.botao-cadastro,
+.botao-principal {
+  background-color: #285943;
+  color: #ffffff;
+}
+
+.inicio {
+  padding: 100px 8%;
+  background-color: #edf4ee;
+}
+
+.conteudo-inicio {
+  max-width: 750px;
+}
+
+.subtitulo,
+.categoria {
+  color: #397354;
+  font-weight: bold;
+}
+
+.inicio h2 {
+  margin: 20px 0;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.inicio h2 span {
+  color: #397354;
+}
+
+.descricao {
+  max-width: 600px;
+  color: #555555;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.botao-principal {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.projetos,
+.sobre {
+  padding: 70px 8%;
+}
+
+.projetos > h2,
+.sobre h2 {
+  color: #285943;
+  font-size: 32px;
+}
+
+.projetos > p,
+.sobre p {
+  max-width: 700px;
+  color: #555555;
+  line-height: 1.7;
+}
+
+.lista-projetos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.card-projeto {
+  padding: 24px;
+  border: 1px solid #e0e7e1;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.card-projeto h3 {
+  color: #285943;
+}
+
+.card-projeto p {
+  min-height: 90px;
+  color: #666666;
+  line-height: 1.6;
+}
+
+.card-projeto button {
+  background-color: #e5efe7;
+  color: #285943;
+}
+
+.sobre {
+  background-color: #f6f8f6;
+}
+
+.rodape {
+  padding: 24px;
+  background-color: #234b38;
+  color: #ffffff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media (max-width: 900px) {
+  .cabecalho {
+    flex-wrap: wrap;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .lista-projetos {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 600px) {
+  .cabecalho {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .cabecalho nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .inicio h2 {
+    font-size: 36px;
+  }
+
+  .lista-projetos {
+    grid-template-columns: 1fr;
+  }
+
+  .projetos,
+  .sobre {
+    padding: 48px 6%;
   }
 }
